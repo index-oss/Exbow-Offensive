@@ -15,3 +15,10 @@ python exploit/exploit.py
 ```
 
 Reports are generated in the `reports/` folder for review.
+python recon/scan.py example.com
+python ai/analyze.py
+python exploit/exploit.py
+markdown-pdf reports/report_template.md -o reports/latest_report.pdf
+git add .
+git commit -m "Initial working version"
+git push origin main
