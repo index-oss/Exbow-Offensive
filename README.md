@@ -1,4 +1,4 @@
-# XBOW‑lite Autonomous Bug‑Hunting Tool
+# EXBOW‑lite Autonomous Bug‑Hunting Tool
 
 ## 🚀 Quickstart (GitHub Codespaces)
 
@@ -25,7 +25,7 @@ git push origin main
 
 Absolutely! I’ve drafted a complete README.md for your autonomous AI-powered bug-hunting system, fully structured with project summary, roadmap, setup, and first launch instructions. You can use it as-is in your repo.
 
-# XBOW-Lite: Autonomous AI-Powered Bug Hunting System
+# EXBOW-Lite: Autonomous AI-Powered Bug Hunting System
 
 ## ✅ Project Summary
 
@@ -116,9 +116,9 @@ GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxx
 
 ---
 
-🚀 First Launch Plan
+##🚀 First Launch Plan
 
-1️⃣ Install Base Tools
+###1️⃣ Install Base Tools
 
 brew install subfinder httpx nuclei dirsearch
 pip install selenium requests python-dotenv
