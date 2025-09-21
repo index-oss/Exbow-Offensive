@@ -1,0 +1,120 @@
+<Project>
+    <Name>XBOW-lite Autonomous Bug-Hunting System</Name>
+    <Goal>
+        Build a modular AI system that automates the bug bounty kill-chain:
+        Recon → AI Analysis → Exploitation → Reporting.
+        Outcome: Local or cloud-based tool that autonomously finds and reports real bugs using LLM/AI assistance.
+    </Goal>
+
+    <Phases>
+        <Phase id="0" name="Config & Setup">
+            <Description>Install tools, get API keys, configure environment, and setup AI stack.</Description>
+            <Tools>
+                <Tool>Python 3.x</Tool>
+                <Tool>pip packages (selenium, requests, python-dotenv)</Tool>
+                <Tool>CLI Tools: subfinder, httpx, nuclei, dirsearch</Tool>
+            </Tools>
+            <TimeEstimate>1–2 days</TimeEstimate>
+        </Phase>
+
+        <Phase id="1" name="Recon Engine">
+            <Description>Automated asset discovery, live host detection, directory brute force, and basic AI-based asset classification.</Description>
+            <Tools>
+                <Tool>subfinder</Tool>
+                <Tool>httpx</Tool>
+                <Tool>dirsearch</Tool>
+                <Tool>nuclei</Tool>
+                <Tool>LLM prompt builder (Groq/OpenAI/DeepSeek)</Tool>
+            </Tools>
+            <TimeEstimate>1–2 days</TimeEstimate>
+        </Phase>
+
+        <Phase id="2" name="AI Vulnerability Analyzer">
+            <Description>Use LLMs to predict possible vulnerabilities based on recon data, tag potential risk, and generate smart suggestions.</Description>
+            <Tools>
+                <Tool>Groq API</Tool>
+                <Tool>OpenAI GPT-4o</Tool>
+                <Tool>LLaMA 3 / DeepSeek local runtime</Tool>
+            </Tools>
+            <TimeEstimate>2–4 days</TimeEstimate>
+        </Phase>
+
+        <Phase id="3" name="Exploit Generator">
+            <Description>Automatically generate PoCs and test exploits using scripts or browser automation.</Description>
+            <Tools>
+                <Tool>Python scripts</Tool>
+                <Tool>curl</Tool>
+                <Tool>sqlmap</Tool>
+                <Tool>Selenium Web Automation</Tool>
+            </Tools>
+            <TimeEstimate>3–5 days</TimeEstimate>
+        </Phase>
+
+        <Phase id="4" name="Auto Reporting Engine">
+            <Description>Generate CVSS-scored reports in Markdown and export to PDF. Optionally push to GitHub repository.</Description>
+            <Tools>
+                <Tool>Markdown</Tool>
+                <Tool>Pandoc / PDF Export</Tool>
+                <Tool>GitHub CLI</Tool>
+            </Tools>
+            <TimeEstimate>2–3 days</TimeEstimate>
+        </Phase>
+
+        <Phase id="5" name="Automation & Pipelines">
+            <Description>Loop full chain using Cron or Apache Airflow for scheduled scans and continuous monitoring.</Description>
+            <TimeEstimate>2 days</TimeEstimate>
+        </Phase>
+    </Phases>
+
+    <TechStack>
+        <AI>
+            <Tool name="Groq API" type="LLM backend" notes="Free, optional"/>
+            <Tool name="LLaMA 3 / DeepSeek" type="Local LLM" notes="Offline runtime"/>
+            <Tool name="OpenAI GPT-4o" type="Optional premium" notes="Backup LLM"/>
+        </AI>
+        <Recon>
+            <Tool name="subfinder" type="Subdomain discovery"/>
+            <Tool name="httpx" type="Live host detection"/>
+            <Tool name="nuclei" type="Template-based vulnerability scanning"/>
+            <Tool name="dirsearch" type="Directory brute force"/>
+        </Recon>
+        <Exploit>
+            <Tool name="Python Scripts" type="PoC generation & validation"/>
+            <Tool name="curl/sqlmap" type="Automated exploitation"/>
+            <Tool name="Selenium" type="Browser automation"/>
+        </Exploit>
+        <Reporting>
+            <Tool name="Markdown" type="Human-readable report"/>
+            <Tool name="Pandoc/PDF" type="Export reports"/>
+            <Tool name="GitHub CLI" type="Push reports"/>
+        </Reporting>
+    </TechStack>
+
+    <AccountsAndKeys>
+        <Groq>API Key from https://console.groq.com (optional)</Groq>
+        <OpenAI>OPENAI_API_KEY from https://platform.openai.com/</OpenAI>
+        <GitHub>GITHUB_TOKEN (optional)</GitHub>
+        <Nuclei>No key required</Nuclei>
+        <Subfinder>No key required</Subfinder>
+        <EnvFile>
+            OPENAI_API_KEY=sk-xxxxxxxxxxxx
+            GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
+            GITHUB_TOKEN=ghp_xxxxxxxxx
+        </EnvFile>
+    </AccountsAndKeys>
+
+    <FirstLaunch>
+        <Step>Install base tools: subfinder, httpx, nuclei, dirsearch, pip packages</Step>
+        <Step>Install LLM tools (Groq API or Ollama/DeepSeek)</Step>
+        <Step>Clone code repository</Step>
+        <Step>Create .env file and set API keys</Step>
+        <Step>Run initial Recon test: python recon_bot.py -d target.com</Step>
+        <Step>Review outputs: live.txt, nuclei-findings.txt, classified.txt</Step>
+    </FirstLaunch>
+
+    <Notes>
+        <Note>Use legal targets only (labs, authorized bug bounty programs)</Note>
+        <Note>Modules are fully modular and can be tested independently</Note>
+        <Note>Reports include CVSS scores and can be exported to PDF</Note>
+    </Notes>
+</Project>
