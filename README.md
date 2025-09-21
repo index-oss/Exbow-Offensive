@@ -6,24 +6,6 @@
 2. Add your API keys by copying `.env.example` to `.env`
 3. Codespace setup runs automatically
 
-## 🛠️ Example flow
-
-```bash
-python recon/scan.py example.com
-python ai/analyze.py
-python exploit/exploit.py
-```
-
-Reports are generated in the `reports/` folder for review.
-python recon/scan.py example.com
-python ai/analyze.py
-python exploit/exploit.py
-markdown-pdf reports/report_template.md -o reports/latest_report.pdf
-git add .
-git commit -m "Initial working version"
-git push origin main
-
-Absolutely! I’ve drafted a complete README.md for your autonomous AI-powered bug-hunting system, fully structured with project summary, roadmap, setup, and first launch instructions. You can use it as-is in your repo.
 
 # EXBOW-Lite: Autonomous AI-Powered Bug Hunting System
 
@@ -213,7 +195,23 @@ I can also create a **fully functional `recon_bot.py`** next with:
 - Nuclei vulnerability scanning  
 - Smart AI classification + Groq/OpenAI prompt builder  
 
-This will make your README immediately actionable.  
+## 🛠️ Example flow
 
-Do you want me to generate `recon_bot.py` now?
+```bash
+python recon/scan.py example.com
+python ai/analyze.py
+python exploit/exploit.py
+```
+
+Reports are generated in the `reports/` folder for review.
+python recon/scan.py example.com
+python ai/analyze.py
+python exploit/exploit.py
+markdown-pdf reports/report_template.md -o reports/latest_report.pdf
+git add .
+git commit -m "Initial working version"
+git push origin main
+
+Absolutely! I’ve drafted a complete README.md for your autonomous AI-powered bug-hunting system, fully structured with project summary, roadmap, setup, and first launch instructions. You can use it as-is in your repo.
+
 
